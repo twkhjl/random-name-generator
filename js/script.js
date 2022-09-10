@@ -3,7 +3,7 @@
 let name_data;
 
 const get_name_data = async () => {
-  await fetch("../json/data.json")
+  await fetch("json/data.json")
     .then(response => response.json())
     .then(json => {
       name_data = json;
