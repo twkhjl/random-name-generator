@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script src="/js/tailwind_3.1.8.js"></script>
+
+
+</head>
+
+<body class="bg-green-600">
+  <div class="bg-green-600 p-6 text-center text-5xl text-yellow-50 shadow-lg shadow-black">
+    <div class="bg-green-900 p-4 shadow-md shadow-black">姓名產生器</div>
+  </div>
+
+  <div class="mt-7 flex justify-center">
+    <button type="button" id="btn_start"
+      class="rounded-lg border-2 bg-slate-900 p-4 text-2xl text-white shadow-lg shadow-black dark:shadow-whiite transition-all duration-150 hover:rounded-2xl hover:bg-white hover:text-4xl hover:text-black hover:shadow-lg hover:shadow-black">開始</button>
+
+
+  </div>
+
+
+
+  <div class="mb-2 mt-8 pl-2">
+    <span class="">數量:</span>
+    <select name="qty" id="qty" class="transition-all duration-100 hover:border-b-2 hover:border-teal-600">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="25">25</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
+    </select>
+  </div>
+
+  <div class="mb-2 pl-2">
+    <span class="">性別:</span>
+    <select name="gender" id="gender" class="transition-all duration-100 hover:border-b-2 hover:border-teal-600">
+      <option value="male">男</option>
+      <option value="female">女</option>
+      <option value="random">隨機</option>
+    </select>
+  </div>
+
+  <div class="flex">
+    <button
+      class="transition-all duration-500 ml-10 mt-4 p-4 rounded-lg border-2 bg-green-900  text-2xl text-white hover:bg-green-500"
+      id="btn_table2excel">
+      <i class="fa-sharp fa-solid fa-file-excel"></i>匯出至excel
+    </button>
+    <button
+      class="transition-all duration-500 ml-10 mt-4 p-4 rounded-lg border-2 bg-red-900  text-2xl text-white hover:bg-red-500"
+      id="btn_pdf">
+      <i class="fa-solid fa-file-pdf"></i>匯出至PDF
+    </button>
+
+  </div>
+
+
+  <div class="flex mt-20 justify-center text-center" id="div_print_me">
+    <table class=" mt-2 w-full table-auto border-t-2 w-1/4 mb-10"
+      id="table">
+      <thead class="border-b-0 border-black">
+        <tr class="shadow-md shadow-black">
+          <th class="text-2xl">姓名</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============================================================== -->
+
+  <!-- template -->
+  <table class="hidden" id="template">
+    <tbody>
+      <tr>
+        <td class="text-xl text-center border-b-2 border-gray-600">{{ value }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- /template -->
+
+  <script src="/js/jquery-3.6.1.min.js"></script>
+  <script src="/js/tableToExcel.min.js"></script>
+  <script src="/js/html2pdf.bundle.min.js"></script>
+
+  <script type="module" src="/js/script.js"></script>
+</body>
+
+</html>
